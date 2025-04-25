@@ -5,9 +5,9 @@ on:
     inputs:
       environment:
         type: choice
-        description: Whoch environment to remove AWS resources for?
+        description: Which environment to remove AWS resources for?
         options:
-          - staging
+          - Staging
           - prod
 
 jobs:

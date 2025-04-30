@@ -117,7 +117,7 @@ resource "aws_security_group" "endpoint_access" {
   vpc_id      = aws_vpc.main.id
 
   ingress {
-    cidr_blocks = aws_vpc.main.cidr_block
+    cidr_blocks = [aws_vpc.main.cidr_block]
     from_port   = 443
     to_port     = 443
     protocol    = "tcp"

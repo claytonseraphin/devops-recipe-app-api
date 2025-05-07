@@ -53,7 +53,12 @@ resource "aws_ecs_task_definition" "api" {
   execution_role_arn       = aws_iam_role.task_execution_role.arn
   task_role_arn            = aws_iam_role.app_task.arn
 
-  container_definitions = jsonencode([])
+  container_definitions = jsonencode([
+    {
+      name  = "proxy"
+      image = var.ecr_proxy_image
+    }
+  ])
 
   volume {
     name = "static"

@@ -41,8 +41,7 @@ resource "aws_cloudwatch_log_group" "ecs_task_logs" {
 }
 
 resource "aws_ecs_cluster" "main" {
-  name       = "${local.prefix}-cluster"
-  depends_on = [aws_iam_service_linked_role.ecs]
+  name = "${local.prefix}-cluster"
 }
 
 resource "aws_ecs_task_definition" "api" {
